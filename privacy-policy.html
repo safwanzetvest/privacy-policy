@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cryptoseal Pass Privacy Policy</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1f24; --muted:#5b6470; --line:#e3e6ea; --accent:#0b6bcb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#111418; --fg:#e6e9ed; --muted:#9aa4b0; --line:#2a3038; --accent:#5aa9f5; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+  h1 { font-size:1.9rem; line-height:1.25; margin:0 0 4px; }
+  h2 { font-size:1.2rem; margin:36px 0 8px; padding-top:16px; border-top:1px solid var(--line); }
+  h3 { font-size:1rem; margin:20px 0 4px; }
+  p, li { margin:6px 0; }
+  ul { padding-left:22px; }
+  .meta { color:var(--muted); margin:0 0 24px; }
+  a { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.95rem; }
+  th, td { text-align:left; vertical-align:top; padding:8px 10px; border:1px solid var(--line); }
+  th { background:color-mix(in srgb, var(--line) 45%, transparent); }
+  .wrap { overflow-x:auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>Cryptoseal Pass Privacy Policy</h1>
+<p class="meta">Effective date: 23 October 2026 &middot; Applies to the Cryptoseal Pass mobile app (Android package <code>com.cryptoseal.pass</code>, and iOS)</p>
+
+<p>This policy explains what information the Cryptoseal Pass mobile app ("the app") handles, why, and the choices you have. The app is provided by <strong>Zetvest Sdn. Bhd.</strong> ("Cryptoseal", "we", "us"). The app is a client for the Cryptoseal Pass service; this policy covers the app. Use of the Cryptoseal Pass service through the web or browser extension is covered by the same principles.</p>
+
+<h2>1. Zero-knowledge design</h2>
+<p>Cryptoseal Pass is built so that we cannot read your vault.</p>
+<ul>
+  <li>Your <strong>master password never leaves your device</strong> in readable form. Your encryption keys are derived from it on your device.</li>
+  <li>Everything you store in a vault (logins, passwords, identities, cards, secure notes, SSH keys, one-time-password secrets, item titles and URLs) is <strong>encrypted on your device with AES-256-GCM before it is sent</strong> to our servers. We store only the encrypted data.</li>
+  <li>We do not have your master password and <strong>cannot recover it or decrypt your vault</strong> for you.</li>
+</ul>
+
+<h2>2. Information we collect</h2>
+<div class="wrap">
+<table>
+  <tr><th>Information</th><th>Why we use it</th><th>Readable by us?</th></tr>
+  <tr><td>Email address</td><td>Your account sign-in identifier; account and security communication</td><td>Yes</td></tr>
+  <tr><td>Authentication data (a value derived from your master password, multi-factor authentication settings)</td><td>To verify sign-in. The master password itself is never sent.</td><td>No (derived value only)</td></tr>
+  <tr><td>Encrypted vault data</td><td>To store and sync your vault across your devices</td><td>No (encrypted)</td></tr>
+  <tr><td>Account, organization and family data: account mode (Personal/Business), vault membership and access levels, family/organization invitations</td><td>To provide sharing and organization features</td><td>Yes</td></tr>
+  <tr><td>Device registration: platform (Android or iOS) and a generic device label</td><td>To manage signed-in sessions and keep your account secure</td><td>Yes</td></tr>
+  <tr><td>Subscription data: plan, term, license keys, payment reference and plan dates</td><td>To provide paid plans and verify entitlements</td><td>Yes</td></tr>
+  <tr><td>Password health results: a 0&ndash;4 strength score and issue flags (for example "weak" or "reused") per login</td><td>For Business organizations, to show security reports and password policy compliance to organization admins. Passwords are never sent.</td><td>Yes (scores/flags only)</td></tr>
+  <tr><td>Technical request data (such as IP address and request time) recorded by our servers</td><td>Security, abuse prevention and troubleshooting</td><td>Yes</td></tr>
+</table>
+</div>
+<p><strong>We do not collect</strong> your location, contacts, photos, files, microphone or camera data. The app contains <strong>no advertising and no third-party analytics or tracking SDKs</strong>, and we do not sell your information.</p>
+
+<h2>3. Information that stays on your device</h2>
+<ul>
+  <li><strong>Encrypted vault cache</strong> so the app works offline, and a queue of offline edits waiting to sync.</li>
+  <li><strong>Sign-in tokens</strong>, stored in the device's secure storage (Android Keystore / iOS Keychain).</li>
+  <li><strong>Unlocked vault keys</strong> are held only in memory and are cleared when the app locks or you sign out.</li>
+  <li><strong>Biometric unlock</strong> (optional): your fingerprint or face data is handled entirely by your device's operating system. We never receive biometric data; the app only stores a key protected by the device's secure hardware, which is removed when you sign out or turn the feature off.</li>
+  <li><strong>Autofill index</strong> (Android, optional): to suggest matching logins, the app keeps an on-device list of item titles, website/app addresses and usernames. Passwords are not included and are only decrypted after you unlock the app. Sites you exclude from autofill are also stored on the device.</li>
+</ul>
+<p>The app's local data is excluded from Android cloud backup and device-to-device transfer. Signing out deletes the tokens, cache and offline queue from the device.</p>
+
+<h2>4. Android Autofill</h2>
+<p>If you enable Cryptoseal Pass as your Android Autofill service, Android shares the structure of the form you are filling (field types, the website domain or app package name) with the app so it can offer matching logins. This happens on your device. When you choose to save a new login from autofill, the details you entered are encrypted on your device before being synced. The app does not use the Accessibility API.</p>
+
+<h2>5. Optional breach check</h2>
+<p>The Password Health page can optionally check whether a password appears in a known data breach. This uses a k-anonymity "range" lookup: the app hashes the password on your device and sends only the <strong>first few characters of the hash</strong> to the breach-data provider configured for the service. The provider returns a list of matching hash suffixes and the comparison happens on your device. Your password and its full hash are never sent.</p>
+
+<h2>6. Third parties</h2>
+<ul>
+  <li><strong>Payment processors.</strong> Upgrades and renewals open a checkout page in your browser run by our payment processors (Billplz, and Stripe for card/FPX payments). Your payment details are entered on and handled by those processors under their own privacy policies; we do not receive your full card number. We receive a payment reference and status.</li>
+  <li><strong>Breach-data provider</strong>, only if you run the optional breach check (see section 5).</li>
+  <li><strong>Hosting providers</strong> that run our servers, under contract and only to provide the service.</li>
+  <li><strong>Organization admins.</strong> If you use a Business or Family account, the owners/admins of that organization can see membership, access levels and (for Business) password health scores and flags. They cannot read your encrypted items unless a vault has been shared with them.</li>
+  <li><strong>Legal requirements.</strong> We may disclose information we hold if required by law. Because vault contents are encrypted with keys we do not have, we cannot disclose them in readable form.</li>
+</ul>
+
+<h2>7. Security</h2>
+<p>All communication between the app and our servers uses HTTPS (TLS). Vault data is end-to-end encrypted as described above. The app locks automatically when sent to the background or after a period of inactivity. No system is perfectly secure, so please choose a strong master password and keep it safe.</p>
+
+<h2>8. Data retention and deletion</h2>
+<ul>
+  <li>We keep your account data for as long as your account is active.</li>
+  <li>You can delete vault items at any time in the app; they are removed from our servers on sync.</li>
+  <li>To <strong>delete your account and all associated data</strong>, email <a href="mailto:management@zetvest.com">management@zetvest.com</a> from your account email address. We delete account data within 30 days of a verified request, except records we must keep by law (for example, payment and tax records).</li>
+  <li>Uninstalling the app or signing out removes the app's data from that device.</li>
+</ul>
+
+<h2>9. Your rights</h2>
+<p>Depending on where you live (including under Malaysia's Personal Data Protection Act 2010, the EU/UK GDPR and similar laws), you may have the right to access, correct, or delete your personal data, to object to or restrict certain processing, and to withdraw consent. Contact us at the address below to exercise these rights. You may also complain to your local data protection authority.</p>
+
+<h2>10. Children</h2>
+<p>The app is not directed to children under 13 (or the minimum age in your country), and we do not knowingly collect personal data from them. Family plans are managed by an adult account owner.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>We may update this policy. We will change the effective date above and, for significant changes, notify you in the app or by email.</p>
+
+<h2>12. Contact us</h2>
+<p>Zetvest Sdn. Bhd.<br>
+Unit 208, Block B, Phileo Damansara 2, Jalan 16/11,<br>
+Pusat Perdagangan Phileo Damansara,<br>
+46350 Petaling Jaya, Selangor, Malaysia<br>
+Email: <a href="mailto:management@zetvest.com">management@zetvest.com</a></p>
+</main>
+</body>
+</html>
